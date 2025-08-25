@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-// --- INICIO DEL SERVIDOR ---
+// --- inicio del servidor ---
 app.listen(PORT, () => {
-  console.log(`Servidor backend de Adivinar numeros corriendo en http://localhost:${PORT}`);
+  console.log(`Servidor backend de adivinar numeros corriendo en http://localhost:${PORT}`);
 });
