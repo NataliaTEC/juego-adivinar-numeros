@@ -18,10 +18,13 @@
 </template>
 
 <script setup>
+/* se importan los modulos necesarios */
 import { useRouter } from 'vue-router'
 
+/* se crea una instancia del enrutador */
 const router = useRouter()
 
+/* se definen las funciones para navegar entre las vistas */
 function goToGame() {
   router.push({ name: 'Game' })
 }
@@ -46,7 +49,8 @@ function goToRules() {
   align-items: center;
   padding: 20px;
 }
-        
+     
+/* estilos generales para la página de inicio */
 body {
   background-color: rgb(255, 255, 255);
   height: 100vh;
@@ -143,7 +147,8 @@ h1 {
   font-weight: 400;
   font-style: normal;
 }
-        
+
+/* responsividad, ajuste en pantallas pequeñas */
 @media (max-width: 768px) {
   .container {
       padding: 20px;

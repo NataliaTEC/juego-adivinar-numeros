@@ -1,11 +1,13 @@
 <template>
   <div class="rules-page">
+    <!-- semitransparencia -->
     <div class="overlay">
       <div class="container">
         <h1 class="irish-grover">Reglas del Juego</h1>
 
         <div class="content-section">
           <h2 class="comfortaa">¿Cómo jugar?</h2>
+          <!-- reglas del juego con images -->
           <ul class="rules-list comfortaa">
             <li>
               <img src="/icons/personas.svg" alt="Jugadores" class="rule-icon" />
@@ -41,6 +43,7 @@
 
         <div class="divider"></div>
 
+        <!-- regresar a la página principal -->
         <button class="back-button irish-grover" @click="goBack">Volver</button>
       </div>
     </div>
@@ -52,7 +55,7 @@ export default {
   name: "RulesPage",
   methods: {
     goBack() {
-      // hago uso de las rutas del vue router
+      //hago uso de las rutas del vue router
       this.$router.push("/");
     }
   }
@@ -162,6 +165,7 @@ h2 {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* iconos de las reglas */
 .rule-icon {
   width: 28px;
   height: 28px;
@@ -176,7 +180,7 @@ h2 {
   flex: 1;
 }
 
-
+/* ajustes responsivos para pantallas pequeñas */
 @media (max-width: 768px) {
   .container {
     padding: 20px;

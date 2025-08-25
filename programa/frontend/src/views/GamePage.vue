@@ -1,6 +1,6 @@
 <template>
   <div class="game-container">
-    <!-- Capa semitransparente -->
+    <!-- semitransparencia -->
     <div class="overlay">
       <div class="container">
         <h1 class="irish-grover">Adivinar números</h1>
@@ -10,7 +10,7 @@
           <div class="tab comfortaa" :class="{active: activeTab === 'history'}" @click="activeTab = 'history'">Historial</div>
         </div>
 
-        <!-- Pantalla de juego -->
+        <!-- pantalla de jugadores -->
         <div v-if="activeTab === 'game' && !gameStarted" class="content-section">
           <h2 class="comfortaa">Configuración de Jugadores</h2>
 
@@ -90,7 +90,7 @@
           </div>
         </div>
         
-        <!-- Pantalla de historial -->
+        <!-- pantalla de historial -->
         <div v-if="activeTab === 'history'" class="content-section">
           <h2 class="comfortaa">Historial de Partidas</h2>
           <p v-if="history.length === 0">No hay partidas en el historial.</p>
@@ -130,8 +130,10 @@ export default {
   name: 'GamePage',
   data() {
     return {
+      //datos de los jugadores
       player1: '',
       player2: '',
+      //estado del juego
       gameStarted: false,
       gameFinished: false,
       activeTab: 'game',
@@ -141,9 +143,12 @@ export default {
       currentGuess: null,
       hint: '',
       roundFinished: false,
+      //tiempo de la ronda
       roundStartTime: 0,
       currentTime: 0,
+      //número objetivo
       targetNumber: 0,
+      //resultados
       results: {
         player1: { attempts: 0, time: 0 },
         player2: { attempts: 0, time: 0 },
@@ -153,6 +158,7 @@ export default {
     }
   },
   created() {
+    //genero el número objetivo y carga el historial
     this.generateTargetNumber();
     this.loadHistory();
   },
@@ -162,11 +168,13 @@ export default {
       this.currentPlayer = this.player1;
       this.roundStartTime = Date.now();
     },
-    
+
+    //genero el número objetivo entre 1 y 100
     generateTargetNumber() {
       this.targetNumber = Math.floor(Math.random() * 100) + 1;
     },
-    
+
+    //verifico si el numero del participante es correcto o da alguna pista
     checkGuess() {
       if (!this.currentGuess || this.currentGuess < 1 || this.currentGuess > 100) {
         this.hint = 'Por favor, introduce un número entre 1 y 100';
@@ -192,7 +200,8 @@ export default {
       
       this.currentGuess = null;
     },
-    
+
+    //paso a la siguiente ronda
     nextRound() {
       if (this.currentRound >= 6) {
         this.finishGame();
@@ -208,10 +217,11 @@ export default {
       this.generateTargetNumber();
     },
     
+    //finalizo el juego y determino el ganador
     finishGame() {
       this.gameFinished = true;
       
-      // Determinar el ganador
+      // determino el ganador
       const p1Score = this.results.player1.attempts + this.results.player1.time;
       const p2Score = this.results.player2.attempts + this.results.player2.time;
       
@@ -221,7 +231,8 @@ export default {
         this.results.winner = this.player2;
       }
     },
-    
+
+    //reinicio el juego
     resetGame() {
       this.gameStarted = false;
       this.gameFinished = false;
@@ -238,7 +249,8 @@ export default {
       };
       this.generateTargetNumber();
     },
-    
+
+    //guardo la partida
     saveGame() {
       const gameData = {
         player1: this.player1,
@@ -251,12 +263,12 @@ export default {
         created_at: new Date().toISOString()
       };
       
-      // Guardar en localStorage (simulando base de datos)
+      //guardo en localStorage
       const savedGames = JSON.parse(localStorage.getItem('numberBattleGames') || '[]');
       savedGames.push(gameData);
       localStorage.setItem('numberBattleGames', JSON.stringify(savedGames));
       
-      // Recargar historial
+      //recargo historial
       this.loadHistory();
       
       alert('Partida guardada correctamente');
