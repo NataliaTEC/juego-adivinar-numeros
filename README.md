@@ -47,7 +47,7 @@ La aplicación permite a dos jugadores competir en una **Batalla de Números**, 
    npm install
    npm start
 3. **Levantar la aplicación**
-  ```bash
+   ```bash
    cd backend
    npm install
    npm start
