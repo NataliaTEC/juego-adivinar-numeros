@@ -1,1 +1,10 @@
 
+a. Nombre del curso: Lenguajes de programacion
+b. Número de semestre y año lectivo: 2025 II semestre
+c. Nombre del Estudiante: Natalia Granados Rosales 
+d. Número de carnet del estudiante: 2021144286
+e. Número de tarea: Tarea #1
+f. Fecha de entrega: 24/08/2025
+g. Estatus de la entrega (debe ser CONGRUENTE con la solución entregada):
+[|Buena|]
+                      
