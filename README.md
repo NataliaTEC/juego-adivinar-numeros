@@ -7,7 +7,7 @@
 
 ---
 
-## 📖 Descripción
+##  Descripción
 Esta es una aplicación web full-stack desarrollada como parte de la **Tarea 1** del curso.  
 La aplicación permite a dos jugadores competir en una **Batalla de Números**, donde cada uno intenta adivinar un número secreto en el menor número de intentos y tiempo posible.
 
@@ -32,7 +32,7 @@ La aplicación permite a dos jugadores competir en una **Batalla de Números**, 
 
 ---
 
-## 🚀 Instalación y Ejecución
+##  Instalación y Ejecución
 
 ### 📌 Pasos para ejecutar
 
