@@ -5,13 +5,13 @@
 **Semestre:** II, 2025  
 **Profesor:** Allan Rodríguez Dávila  
 
----
+
 
 ##  Descripción
 Esta es una aplicación web full-stack desarrollada como parte de la **Tarea 1** del curso.  
 La aplicación permite a dos jugadores competir en una **Batalla de Números**, donde cada uno intenta adivinar un número secreto en el menor número de intentos y tiempo posible.
 
----
+
 
 ## ⚙️ Funcionalidades
 - **Inicio de Partida:** Registro de dos jugadores y asignación aleatoria de turnos.  
@@ -22,7 +22,7 @@ La aplicación permite a dos jugadores competir en una **Batalla de Números**, 
 - **Resumen de Partida:** Resultados detallados por jugador y ronda.  
 - **Historial de Partidas:** Página web con todos los resultados históricos.  
 
----
+
 
 ## 🛠️ Tecnologías Utilizadas
 ### Backend
@@ -30,7 +30,7 @@ La aplicación permite a dos jugadores competir en una **Batalla de Números**, 
 ### Frontend
 - Framework: **Vue.js** 
 
----
+
 
 ##  Instalación y Ejecución
 
